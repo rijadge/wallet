@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wallet.API</name>
+    </assembly>
+    <members>
+        <member name="M:wallet.Controllers.WalletController.Pay(System.Guid,System.Decimal)">
+            <summary>
+            Method to add extra money to <see cref="T:wallet.Models.Player"/> balance.
+            </summary>
+            <param name="id">Id of player.</param>
+            <param name="amount">Amount to add.</param>
+            <returns>The updated <see cref="T:wallet.Models.Player"/> instance.</returns>
+        </member>
+        <member name="M:wallet.Controllers.WalletController.CurrentBalance(System.Guid)">
+            <summary>
+            Method to check the <see cref="T:wallet.Models.Player"/> balance.
+            </summary>
+            <param name="id">Id of player.</param>
+            <returns>Returns the balance.</returns>
+        </member>
+        <member name="M:wallet.Controllers.WalletController.Bet(System.Guid,System.Decimal)">
+            <summary>
+            Method to make a bet.
+            </summary>
+            <param name="id">Id of player.</param>
+            <param name="amount">Amount to bet.</param>
+            <returns>Returns the last <see cref="T:wallet.Models.Transaction"/>.</returns>
+        </member>
+        <member name="M:wallet.Controllers.WalletController.Reward(System.Guid,System.Decimal)">
+            <summary>
+            Method to give a reward.
+            </summary>
+            <param name="id">Id of player.</param>
+            <param name="amount">Amount to reward.</param>
+            <returns>Returns the last <see cref="T:wallet.Models.Transaction"/>.</returns>
+        </member>
+        <member name="M:wallet.Controllers.WalletController.SetLossLimit(System.Guid,System.Decimal)">
+            <summary>
+            Method to set loss limit of player.
+            </summary>
+            <param name="id">Id of player.</param>
+            <param name="limit">Limit to set.</param>
+            <returns><see cref="T:wallet.Models.Player"/> with updated loss limit.</returns>
+        </member>
+        <member name="M:wallet.Controllers.WalletController.Players">
+            <summary>
+            Method to read all players. Read id of any player and use it in the other endpoints.
+            </summary>
+            <returns>List of <see cref="T:wallet.Models.Player"/>.</returns>
+        </member>
+        <member name="M:wallet.Controllers.WalletController.Transactions">
+            <summary>
+            Method to see all transactions of all players.
+            </summary>
+            <returns>List of <see cref="T:wallet.Models.Transaction"/>.</returns>
+        </member>
+        <member name="M:wallet.Services.IAccountService.GetTransactions">
+            <summary>
+            Method used to read all transactions.
+            </summary>
+            <returns>List of <see cref="T:wallet.Models.Transaction"/></returns>
+        </member>
+        <member name="M:wallet.Services.IAccountService.GiveReward(System.Decimal)">
+            <summary>
+            Method used to give a reward to the player.
+            </summary>
+            <param name="amount">Amount to give.</param>
+            <returns>True if the player was rewarded, otherwise, false.</returns>
+        </member>
+        <member name="M:wallet.Services.IAccountService.MakeBet(System.Decimal)">
+            <summary>
+            Method to make a bet.
+            </summary>
+            <param name="amount">Amount to bet.</param>
+            <returns>True if bet was successful, otherwise, false.</returns>
+        </member>
+        <member name="M:wallet.Services.IAccountService.TryFetchPlayer(System.Guid)">
+            <summary>
+            Fetches a player and saves it internally in the <see cref="T:wallet.Services.AccountService"/>.
+            </summary>
+            <param name="id">Id of player to fetch.</param>
+            <returns>Returns true if player successfully read, otherwise, false.</returns>
+        </member>
+        <member name="M:wallet.Services.IAccountService.AddCredits(System.Decimal)">
+            <summary>
+            Method to add credits in player's balance.
+            </summary>
+            <param name="amount">Amount to add.</param>
+            <returns>True if added, otherwise, false.</returns>
+        </member>
+        <member name="M:wallet.Services.IAccountService.SetLossLimit(System.Decimal)">
+            <summary>
+            Method to set loss limit of player.
+            </summary>
+            <param name="lossLimit">Loss limit to set.</param>
+            <returns>True if set, otherwise, false.</returns>
+        </member>
+        <member name="M:wallet.Services.IAccountService.GetPlayer">
+            <summary>
+            Method to get a player from db.
+            </summary>
+            <returns>Instance of <see cref="T:wallet.Models.Player"/></returns>
+        </member>
+        <member name="M:wallet.Services.IAccountService.GetPlayers">
+            <summary>
+            Method to get all player from db.
+            </summary>
+            <returns>List of <see cref="T:wallet.Models.Player"/></returns>
+        </member>
+    </members>
+</doc>
